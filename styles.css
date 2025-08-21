@@ -310,21 +310,31 @@ main {
 }
 
 .float-icon.kotlin {
-    top: 10%;
-    left: -10%;
+    top: -70%;
+    left: -30%;
     animation-delay: 0s;
 }
 
 .float-icon.android {
-    top: 70%;
-    right: -10%;
+    top: -50%;
+    right: -30%;
     animation-delay: 1s;
 }
 
 .float-icon.compose {
-    bottom: 30%;
-    left: -15%;
+    top: 10%;
+    left: -10%;
     animation-delay: 2s;
+}
+
+.float-icon.firebase {
+    top: 6%;
+    right: -12%;
+    animation-delay: 3s;
+}
+@keyframes floatIcon {
+    0%,100% { transform: translateY(0) }
+    50% { transform: translateY(-10px) }
 }
 
 
