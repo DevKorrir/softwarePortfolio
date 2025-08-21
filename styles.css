@@ -1,0 +1,55 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color Scheme - Burgundy Wine Theme */
+:root {
+    --primary-color: #8B0000;
+    --primary-light: #A52A2A;
+    --primary-dark: #660000;
+    --secondary-color: #B22222;
+    --accent-color: #DC143C;
+    --accent-light: #FF6B6B;
+    --gold-accent: #DAA520;
+    
+    /* Light Theme */
+    --text-primary: #1a0a0a;
+    --text-secondary: #5a4a4a;
+    --text-muted: #8a7a7a;
+    --bg-primary: #fefefe;
+    --bg-secondary: #f8f6f6;
+    --bg-tertiary: #f0eeee;
+    --card-bg: #ffffff;
+    --border-color: #e0d8d8;
+    --shadow-light: 0 4px 20px rgba(139, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(139, 0, 0, 0.15);
+    --shadow-heavy: 0 15px 60px rgba(139, 0, 0, 0.2);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+    --gradient-gold: linear-gradient(135deg, var(--gold-accent), #FFD700);
+    --gradient-background: linear-gradient(135deg, #fefefe 0%, #f8f6f6 100%);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --text-primary: #f5f0f0;
+    --text-secondary: #c8b8b8;
+    --text-muted: #a09090;
+    --bg-primary: #0f0505;
+    --bg-secondary: #1a0a0a;
+    --bg-tertiary: #250f0f;
+    --card-bg: #1f0b0b;
+    --border-color: #3a2020;
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --shadow-heavy: 0 15px 60px rgba(0, 0, 0, 0.5);
+    --gradient-background: linear-gradient(135deg, #0f0505 0%, #1a0a0a 100%);
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
