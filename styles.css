@@ -7,48 +7,103 @@
 
 /* Color Scheme - Burgundy Wine Theme */
 :root {
-    --primary-color: #8B0000;
-    --primary-light: #A52A2A;
-    --primary-dark: #660000;
-    --secondary-color: #B22222;
-    --accent-color: #DC143C;
-    --accent-light: #FF6B6B;
-    --gold-accent: #DAA520;
+    /* Primary Wine Colors - Enhanced */
+    --primary-color: #8B0000; /* Dark Red/Burgundy */
+    --primary-light: #B71C1C; /* Slightly lighter burgundy */
+    --primary-dark: #4A0000; /* Deep wine */
+    --secondary-color: #C62828; /* Rich red */
+    --accent-color: #D32F2F; /* Vibrant red */
+    --accent-light: #FF5252; /* Coral red */
     
-    /* Light Theme */
-    --text-primary: #1a0a0a;
-    --text-secondary: #5a4a4a;
-    --text-muted: #8a7a7a;
-    --bg-primary: #fefefe;
-    --bg-secondary: #f8f6f6;
-    --bg-tertiary: #f0eeee;
-    --card-bg: #ffffff;
-    --border-color: #e0d8d8;
-    --shadow-light: 0 4px 20px rgba(139, 0, 0, 0.1);
-    --shadow-medium: 0 8px 30px rgba(139, 0, 0, 0.15);
-    --shadow-heavy: 0 15px 60px rgba(139, 0, 0, 0.2);
+    /* Complementary Colors */
+    --gold-accent: #FFB300; /* Warm gold */
+    --rose-gold: #E8B4B8; /* Rose gold for subtle highlights */
+    --wine-mist: #F8E8E9; /* Very light wine tint */
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
-    --gradient-gold: linear-gradient(135deg, var(--gold-accent), #FFD700);
-    --gradient-background: linear-gradient(135deg, #fefefe 0%, #f8f6f6 100%);
+    /* Light Theme - Warm Minimalism */
+    --text-primary: #2C1810; /* Warm dark brown instead of black */
+    --text-secondary: #5D4E37; /* Coffee brown */
+    --text-muted: #8B7355; /* Warm gray-brown */
+    
+    /* Light backgrounds with wine undertones */
+    --bg-primary: #FFFBFB; /* Slightly warm white */
+    --bg-secondary: #FDF5F5; /* Very light wine tint */
+    --bg-tertiary: #F9EEEE; /* Soft wine blush */
+    --card-bg: #FFFFFF;
+    --border-color: #E8DCDC; /* Warm border */
+    
+    /* Enhanced shadows with wine tint */
+    --shadow-light: 0 4px 20px rgba(139, 0, 0, 0.08);
+    --shadow-medium: 0 8px 30px rgba(139, 0, 0, 0.12);
+    --shadow-heavy: 0 15px 60px rgba(139, 0, 0, 0.18);
+    --shadow-glow: 0 0 40px rgba(211, 47, 47, 0.15);
+    
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+    --gradient-gold: linear-gradient(135deg, var(--gold-accent) 0%, #FFD54F 100%);
+    --gradient-rose: linear-gradient(135deg, var(--rose-gold) 0%, #FFCDD2 100%);
+    --gradient-background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+    
+    /* Glass morphism effects */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-/* Dark Theme */
+/* Enhanced Dark Theme - Deep Wine Luxury */
 [data-theme="dark"] {
-    --text-primary: #f5f0f0;
-    --text-secondary: #c8b8b8;
-    --text-muted: #a09090;
-    --bg-primary: #0f0505;
-    --bg-secondary: #1a0a0a;
-    --bg-tertiary: #250f0f;
-    --card-bg: #1f0b0b;
-    --border-color: #3a2020;
-    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
-    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
-    --shadow-heavy: 0 15px 60px rgba(0, 0, 0, 0.5);
-    --gradient-background: linear-gradient(135deg, #0f0505 0%, #1a0a0a 100%);
+    /* Dark theme text colors */
+    --text-primary: #F5F0F0; /* Warm white */
+    --text-secondary: #D4C4C4; /* Warm light gray */
+    --text-muted: #B8A8A8; /* Muted warm gray */
+    
+    /* Dark wine backgrounds */
+    --bg-primary: #0D0404; /* Deep wine black */
+    --bg-secondary: #1A0808; /* Dark wine */
+    --bg-tertiary: #2D1010; /* Medium wine */
+    --card-bg: #1F0A0A; /* Wine card background */
+    --border-color: #4A2020; /* Wine border */
+    
+    /* Dark theme shadows with wine glow */
+    --shadow-light: 0 4px 20px rgba(139, 0, 0, 0.4);
+    --shadow-medium: 0 8px 30px rgba(139, 0, 0, 0.5);
+    --shadow-heavy: 0 15px 60px rgba(139, 0, 0, 0.6);
+    --shadow-glow: 0 0 40px rgba(211, 47, 47, 0.3);
+    
+    /* Dark theme gradients */
+    --gradient-background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+    
+    /* Dark glass effects */
+    --glass-bg: rgba(139, 0, 0, 0.15);
+    --glass-border: rgba(211, 47, 47, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Special Color Variations for Different Elements */
+:root {
+    /* Interactive states */
+    --hover-primary: #A50000;
+    --hover-secondary: #E53935;
+    --hover-gold: #FFC107;
+    
+    /* Status colors with wine harmony */
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
+    --error-color: #F44336;
+    --info-color: #2196F3;
+    
+    /* Semantic colors for dark theme */
+    --success-dark: #66BB6A;
+    --warning-dark: #FFB74D;
+    --error-dark: #EF5350;
+    --info-dark: #42A5F5;
+}
+
+[data-theme="dark"] {
+    --hover-primary: #C62828;
+    --hover-secondary: #FF5252;
+    --hover-gold: #FFD54F;
 }
 
 /* Typography */
