@@ -449,10 +449,44 @@ main {
     padding-top: 80px;
 }
 
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
+.section {
+    padding: 6rem 0;
+    position: relative;
+}
 
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    position: relative;
+    color: var(--text-primary);
+}
 
+.section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-right: 1rem;
+    position: relative;
+}
 
+.section-number::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    width: 100px;
+    height: 1px;
+    background: var(--border-color);
+    transform: translateY(-50%);
+}
 
 /* Hero Section */
 .hero {
@@ -502,6 +536,8 @@ main {
     line-height: 1.1;
     position: relative;
 }
+
+
 
 
 
