@@ -826,6 +826,15 @@ main {
     color: var(--text-primary);
 }
 
+ .time {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+         @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
 .indicators {
     display: flex;
     gap: 0.5rem;
@@ -858,6 +867,13 @@ main {
     margin: 0 auto 1rem;
     box-shadow: var(--shadow-light);
 }
+
+.avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
 .profile-section h3 {
     font-size: 1.2rem;
