@@ -425,6 +425,21 @@ body, .toggle-track, .toggle-thumb, .theme-toggle i {
     opacity: 1;
 }
 
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
 
 
 
