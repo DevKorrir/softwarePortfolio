@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //init all components
     initLoader();
-    toggleTheme();
+    initThemeToggle();
+    
 });
 
 //loading screeen
@@ -34,22 +35,23 @@ function initLoader() {
     }, 3000);
 }
 
-//theme toggle
-function toggleTheme() {
-    const themeToggle = document.querySelector('.theme-Toggle');
+// Theme Toggle
+function initThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle');
     const body = document.body;
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
     if (!themeToggle) return;
 
-    //assign theme to dark
+    //Default theme = dark
     const currentTheme = localStorage.getItem('theme') || 'dark';
     body.setAttribute('data-theme', currentTheme);
     if (icon) {
-        icon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        icon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
     }
 
-    //smooth transition
-    body.style.transition = 'background-color 0.4s, color 0.4s ease';
+    // Smooth transition
+    body.style.transition = "background-color 0.4s ease, color 0.4s ease";
 
     themeToggle.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
@@ -57,9 +59,13 @@ function toggleTheme() {
 
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        
 
-      // Add animation class for extra smoothness
+        // Update icon
+        if (icon) {
+            icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        // Add animation class for extra smoothness
         body.classList.add('theme-transition');
         setTimeout(() => {
             body.classList.remove('theme-transition');
