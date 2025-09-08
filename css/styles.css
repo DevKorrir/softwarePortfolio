@@ -965,6 +965,13 @@ main {
 }
 
 
+/* About Section */
+.about-section {
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+
 
 
 
