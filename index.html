@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK for contact form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -116,17 +118,18 @@
                                 <div class="phone-screen">
                                     <div class="app-ui">
                                         <div class="status-bar">
-                                            <span class="time">11.32</span>
+                                            <span class="time" id="phoneTime">00:00</span>
                                             <div class="indicators">
+                                                <i class="fas fa-signal"></i>
                                                 <i class="fas fa-wifi"></i>
-                                                 <i class="fas fa-battery-three-quarters"></i>
+                                                <i class="fas fa-battery-three-quarters"></i>
                                             </div>
                                         </div>
 
                                         <div class="app-content">
                                             <div class="profile-section">
                                                 <div class="avatar" id="avatar">
-                                                     <img src="/res/4A7A7219.jpg" alt="kaimage">
+                                                     <img src="/res/profile.png" alt="kaimage">
                                                 </div>
                                                 <h3>DevKorrir</h3>
                                                 <p>Android Developer</p>
@@ -149,6 +152,19 @@
                                                 </div>
 
                                             </div>
+                                        </div>
+
+                                        <!-- Android Navigation Bar -->
+                                        <div class="phone-nav-bar">
+                                            <button class="nav-btn back-btn" aria-label="Back">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="nav-btn home-btn" aria-label="Home">
+                                                <i class="fas fa-circle"></i>
+                                            </button>
+                                            <button class="nav-btn recent-btn" aria-label="Recent Apps">
+                                                <i class="fas fa-square"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
