@@ -195,36 +195,73 @@ function initProjectCards() {
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
-    
+
+    // Initialize EmailJS with your public key
+    // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+    emailjs.init('2M4SeXQVSIl3ziXB7');
+
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const formData = new FormData(contactForm);
         const formButton = contactForm.querySelector('button[type="submit"]');
         const buttonText = formButton.querySelector('.btn-text');
         const originalText = buttonText.innerHTML;
         
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
         // Show loading state
         buttonText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         formButton.disabled = true;
         
-        // Simulate form submission (replace with actual form handling)
-        setTimeout(() => {
-            // Reset form
-            contactForm.reset();
-            
-            // Show success message
-            buttonText.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                buttonText.innerHTML = originalText;
-                formButton.disabled = false;
-            }, 3000);
-            
-            // Show notification
-            showNotification('Message sent successfully!', 'success');
-        }, 2000);
+        // EmailJS template parameters
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_name: 'Aldo', // Your name
+        };
+
+        // Send email using EmailJS
+        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
+        emailjs.send('service_c44ib25', 'template_fzyruoi', templateParams)
+            .then(function(response) {
+                console.log('Email sent successfully!', response.status, response.text);
+
+                // Reset form
+                contactForm.reset();
+
+                // Show success message
+                buttonText.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    buttonText.innerHTML = originalText;
+                    formButton.disabled = false;
+                }, 3000);
+
+                // Show notification
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            })
+            .catch(function(error) {
+                console.error('Failed to send email:', error);
+
+                // Show error message
+                buttonText.innerHTML = '<i class="fas fa-times"></i> Failed to Send';
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    buttonText.innerHTML = originalText;
+                    formButton.disabled = false;
+                }, 3000);
+
+                // Show error notification
+                showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+            });
     });
 }
 
