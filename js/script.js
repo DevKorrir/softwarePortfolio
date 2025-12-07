@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkillAnimations();
     initGlitchEffect();
     initButtonRipples();
-    
+    initPhoneTime();
+
 });
 
 //loading screeen
@@ -694,6 +695,31 @@ const additionalStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
+
+// Dynamic Phone Time
+function initPhoneTime() {
+    const timeElement = document.querySelector('.status-bar .time');
+    if (!timeElement) return;
+
+    function updateTime() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+
+        // Format with leading zeros
+        hours = hours.toString().padStart(2, '0');
+        minutes = minutes.toString().padStart(2, '0');
+
+        // Display in HH:MM format (like real phones)
+        timeElement.textContent = `${hours}:${minutes}`;
+    }
+
+    // Update immediately
+    updateTime();
+
+    // Update every second for accuracy
+    setInterval(updateTime, 1000);
+}
 
 // Global utility functions
 window.DevKorryrPortfolio = {
