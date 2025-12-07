@@ -199,7 +199,7 @@ function initContactForm() {
 
     // Initialize EmailJS with your public key
     // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-    emailjs.init('2M4SeXQVSIl3ziXB7');
+    emailjs.init('2M4SeXQVSIl3ziXB75');
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -229,7 +229,7 @@ function initContactForm() {
 
         // Send email using EmailJS
         // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
-        emailjs.send('service_c44ib25', 'template_fzyruoi', templateParams)
+        emailjs.send('service_c44ib255', 'template_fzyruoi5', templateParams)
             .then(function(response) {
                 console.log('Email sent successfully!', response.status, response.text);
 
