@@ -1445,6 +1445,30 @@ main {
     resize: vertical;
 }
 
+/* Fix autofill/autocomplete background color in dark mode */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active,
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-secondary) inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    box-shadow: 0 0 0 1000px var(--bg-secondary) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: var(--text-primary);
+}
+
+/* Also handle autofill label position */
+.form-group input:-webkit-autofill + label,
+.form-group textarea:-webkit-autofill + label {
+    top: -0.5rem;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
 .form-group label {
     position: absolute;
     top: 1rem;
@@ -1896,7 +1920,7 @@ main {
     }
 
     [data-theme="dark"] .toggle-thumb {
-        left: 20px;
+        left: 22px;
     }
     
     .hero h1 {
