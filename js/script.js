@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkillAnimations();
     initGlitchEffect();
     initButtonRipples();
-    initPhoneTime();
-
+    
 });
 
 //loading screeen
@@ -199,7 +198,7 @@ function initContactForm() {
 
     // Initialize EmailJS with your public key
     // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-    emailjs.init('2M4SeXQVSIl3ziXB75');
+    emailjs.init('2M4SeXQVSIl3ziXB7');
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -229,7 +228,7 @@ function initContactForm() {
 
         // Send email using EmailJS
         // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
-        emailjs.send('service_c44ib255', 'template_fzyruoi5', templateParams)
+        emailjs.send('service_c44ib25', 'template_fzyruoi', templateParams)
             .then(function(response) {
                 console.log('Email sent successfully!', response.status, response.text);
 
@@ -695,31 +694,6 @@ const additionalStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
-
-// Dynamic Phone Time
-function initPhoneTime() {
-    const timeElement = document.querySelector('.status-bar .time');
-    if (!timeElement) return;
-
-    function updateTime() {
-        const now = new Date();
-        let hours = now.getHours();
-        let minutes = now.getMinutes();
-
-        // Format with leading zeros
-        hours = hours.toString().padStart(2, '0');
-        minutes = minutes.toString().padStart(2, '0');
-
-        // Display in HH:MM format (like real phones)
-        timeElement.textContent = `${hours}:${minutes}`;
-    }
-
-    // Update immediately
-    updateTime();
-
-    // Update every second for accuracy
-    setInterval(updateTime, 1000);
-}
 
 // Global utility functions
 window.DevKorryrPortfolio = {
