@@ -1862,7 +1862,7 @@ main {
 
     .mobile-menu-toggle {
         display: flex;
-        z-index: 1001;
+        
     }
 
     .logo {
