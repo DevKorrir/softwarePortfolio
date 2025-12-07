@@ -718,7 +718,28 @@ function initPhoneTime() {
     updateTime();
 
     // Update every second for accuracy
-    setInterval(updateTime, 1000);
+    const intervalId = setInterval(updateTime, 1000);
+
+    // Clear interval on page unload
+    window.addEventListener('beforeunload', function() {
+        clearInterval(intervalId);
+    });
+
+    // Observe removal of timeElement from DOM
+    const observer = new MutationObserver(function(mutationsList) {
+        for (const mutation of mutationsList) {
+            for (const removedNode of mutation.removedNodes) {
+                if (removedNode === timeElement || (removedNode.contains && removedNode.contains(timeElement))) {
+                    clearInterval(intervalId);
+                    observer.disconnect();
+                    return;
+                }
+            }
+        }
+    });
+    if (timeElement.parentNode) {
+        observer.observe(timeElement.parentNode, { childList: true });
+    }
 }
 
 // Global utility functions
